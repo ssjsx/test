@@ -8,6 +8,8 @@ app.set('views','cloud/views');   // 设置模板目录
 app.set('view engine', 'ejs');    // 设置 template 引擎
 app.use(express.bodyParser());    // 读取请求 body 的中间件
 
+var avosExpressHttpsRedirect = require('avos-express-https-redirect');
+app.use(avosExpressHttpsRedirect());
 // 启用 cookieParser
 app.use(express.cookieParser('Your Cookie Secure'));
 // 使用 avos-express-cookie-session 记录登录信息到 cookie
